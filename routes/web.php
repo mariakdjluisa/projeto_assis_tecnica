@@ -11,11 +11,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\TipoServicoController;
+use App\Http\Controllers\TipoEquipamentoController;
+use App\Http\Controllers\OrdemServicoController;
 
 
 Route::view('/', 'welcome')->name('home');
 // URI parametro que eu passo após URL
 Route::resource('tipo-servico', TipoServicoController::class);
+Route::resource('ordem-servico', OrdemServicoController::class);
+Route::resource('tipo-equipamento', TipoEquipamentoController::class);
 Route::resource('categorias',CategoriaController::class);
 Route::resource('cliente', ClientesController::class); 
 Route::middleware(['auth', 'verified'])->group(function () {
