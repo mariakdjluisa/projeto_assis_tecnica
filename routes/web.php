@@ -13,7 +13,9 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\TipoServicoController;
 use App\Http\Controllers\TipoEquipamentoController;
 use App\Http\Controllers\OrdemServicoController;
+use App\Http\Controllers\TecnicoController;
 
+Route::resource('tecnico', TecnicoController::class);
 
 Route::view('/', 'welcome')->name('home');
 // URI parametro que eu passo após URL

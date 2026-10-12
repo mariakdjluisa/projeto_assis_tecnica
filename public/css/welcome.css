@@ -1,0 +1,46 @@
+/* ESTILO DA PÁGINA INICIAL (welcome.blade.php)
+Ajuda da IA para fazer, pois queria fazer separado do welcome */
+
+/* RESET: tira as margens padrão do navegador e faz o tamanho das caixas incluir borda e espaçamento */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* CORPO DA PÁGINA: fonte, cores claras e centralização do conteúdo */
+body { font-family: "Instrument Sans", system-ui, sans-serif; background: #fdfdfc; color: #1b1b18; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 24px; }
+
+/* LINKS: herdam a cor do texto e ficam sem sublinhado */
+a { color: inherit; text-decoration: none; }
+
+/* MENU DO TOPO: fica alinhado à direita, com os botões Log in / Register / Dashboard */
+.topo { width: 100%; max-width: 900px; display: flex; justify-content: flex-end; gap: 12px; margin-bottom: 24px; font-size: 14px; }
+
+/* BOTÃO DO MENU: borda fina que escurece ao passar o mouse */
+.botao { padding: 6px 20px; border: 1px solid #19140035; border-radius: 4px; }
+.botao:hover { border-color: #1915014a; }
+
+/* CAIXA PRINCIPAL: onde ficam o título e os cards */
+main { width: 100%; max-width: 900px; background: #fff; border: 1px solid #e3e3e0; border-radius: 8px; padding: 40px; }
+
+/* TÍTULO E DESCRIÇÃO do sistema */
+h1 { font-size: 28px; margin-bottom: 8px; }
+.descricao { color: #706f6c; margin-bottom: 32px; }
+
+/* GRADE DOS CARDS: se ajusta ao tamanho da tela (de 1 a vários cards por linha) */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+
+/* CARD DE CADA CRUD: a borda fica vermelha ao passar o mouse */
+.card { border: 1px solid #e3e3e0; border-radius: 8px; padding: 20px; }
+.card:hover { border-color: #f53003; }
+.card h2 { font-size: 16px; margin-bottom: 6px; }
+.card p { font-size: 13px; color: #706f6c; }
+
+/* RODAPÉ */
+footer { margin-top: 24px; font-size: 13px; color: #706f6c; text-align: center; }
+
+/* MODO ESCURO: só troca as cores quando o computador está no tema escuro */
+@media (prefers-color-scheme: dark) {
+    body { background: #0a0a0a; color: #ededec; }
+    main { background: #161615; border-color: #3e3e3a; }
+    .card { border-color: #3e3e3a; }
+    .botao { border-color: #3e3e3a; }
+    .descricao, .card p, footer { color: #a1a09a; }
+}
