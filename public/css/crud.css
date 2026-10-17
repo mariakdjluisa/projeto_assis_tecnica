@@ -1,0 +1,62 @@
+/* ESTILO DOS CRUDs (listagens, formulários e detalhes)
+   Arquivo: public/css/crud.css
+   Tudo fica dentro da classe .crud, então só afeta as telas que usam <section class="crud">.
+   O layout do sistema é escuro (html.dark), por isso as cores base são escuras e o claro é a exceção. */
+
+/* CAIXA DO CRUD: centraliza o conteúdo e dá espaçamento */
+.crud { max-width: 1000px; margin: 0 auto; padding: 24px; color: #ededec; }
+
+/* TÍTULO DA PÁGINA */
+.crud h1 { font-size: 26px; font-weight: 600; margin-bottom: 16px; }
+
+/* MENSAGEM DE SUCESSO (session('sucesso')): faixa verde */
+.crud .sucesso { background: #14532d; color: #bbf7d0; border: 1px solid #166534; border-radius: 6px; padding: 10px 14px; margin-bottom: 16px; font-size: 14px; }
+
+/* BARRA DE AÇÕES: onde fica o botão "Novo ..." */
+.crud .acoes-topo { margin-bottom: 16px; }
+
+/* BOTÕES (valem para <a class="btn"> e <button class="btn">) */
+.crud .btn { display: inline-block; padding: 7px 14px; border: 1px solid #3e3e3a; border-radius: 6px; background: transparent; color: inherit; font-size: 14px; cursor: pointer; text-decoration: none; }
+.crud .btn:hover { border-color: #a1a09a; }
+/* botão principal (Novo, Salvar): vermelho do tema */
+.crud .btn-principal { background: #f53003; border-color: #f53003; color: #fff; }
+.crud .btn-principal:hover { background: #d92a02; border-color: #d92a02; }
+/* botão de perigo (Excluir) */
+.crud .btn-perigo { color: #fca5a5; border-color: #7f1d1d; }
+.crud .btn-perigo:hover { background: #7f1d1d; border-color: #7f1d1d; color: #fff; }
+
+/* TABELA DA LISTAGEM */
+.crud table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.crud caption { text-align: left; color: #a1a09a; font-size: 13px; padding-bottom: 8px; }
+.crud th { text-align: left; padding: 10px 12px; border-bottom: 2px solid #3e3e3a; font-weight: 600; }
+.crud td { padding: 10px 12px; border-bottom: 1px solid #2a2a27; vertical-align: middle; }
+.crud tbody tr:hover { background: #1f1f1d; }
+
+/* COLUNA "AÇÕES": botões lado a lado; o form do Excluir não quebra a linha */
+.crud td.col-acoes { display: flex; gap: 8px; align-items: center; }
+.crud td.col-acoes form { margin: 0; }
+
+/* LISTA VAZIA ("Nenhum ... cadastrado") */
+.crud td.vazio { text-align: center; color: #a1a09a; padding: 24px; }
+
+/* FORMULÁRIOS (create/edit): campos empilhados */
+.crud form .campo { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; max-width: 480px; }
+.crud label { font-size: 14px; font-weight: 500; }
+.crud input[type="text"], .crud input[type="email"], .crud input[type="number"], .crud input[type="date"], .crud select, .crud textarea {
+    padding: 8px 10px; border: 1px solid #3e3e3a; border-radius: 6px; background: #161615; color: inherit; font-size: 14px; font-family: inherit;
+}
+.crud input:focus, .crud select:focus, .crud textarea:focus { outline: none; border-color: #f53003; }
+
+/* ERROS DE VALIDAÇÃO */
+.crud .erro { color: #fca5a5; font-size: 13px; }
+
+/* DETALHES (show): lista de dados do registro */
+.crud dl { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; margin-bottom: 20px; }
+.crud dt { color: #a1a09a; }
+.crud dd { margin: 0; }
+
+/* LISTA DE ERROS NO TOPO DO FORMULÁRIO (@if ($errors->any())): caixa vermelha */
+.crud .erros { background: #450a0a; border: 1px solid #7f1d1d; color: #fca5a5; border-radius: 6px; padding: 10px 14px 10px 30px; margin-bottom: 16px; font-size: 14px; max-width: 480px; }
+
+/* BOTÕES DO FORMULÁRIO (Salvar / Cancelar): lado a lado */
+.crud .botoes-form { display: flex; gap: 8px; margin-top: 8px; }
